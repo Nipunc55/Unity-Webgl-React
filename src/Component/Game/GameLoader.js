@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-
+import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 import Unity, { UnityContext } from 'react-unity-webgl'
+import './GameLoader.css'
 
 function GameLoader(props) {
   const [progression, setProgression] = useState(0)
   const [isLoaded, setLoaded] = useState(false)
+  const handle = useFullScreenHandle()
 
   ////
   const unityContext = new UnityContext({
@@ -42,6 +44,11 @@ function GameLoader(props) {
             </h1> */}
           </div>
         )}
+        {/* {isLoaded === true && (
+          <div className="button">
+            <button onClick={handle.enter}>Click Here To Play</button>
+          </div>
+        )} */}
 
         <div className="unity">
           <Unity className="unity-con" unityContext={unityContext} />

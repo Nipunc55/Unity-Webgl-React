@@ -1,5 +1,117 @@
-.unity {
-  /* box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.6) !important; */
-  height: fit-content;
+.game {
+  display: flex;
   padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+
+  justify-content: center;
+
+  align-self: center;
+}
+
+.container {
+  position: relative;
+
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  justify-self: center;
+  align-self: center;
+}
+
+.container > .loading-overlay {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+  font-size: calc(20px + 2vmin);
+  font-weight: 600;
+
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+}
+.container > .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+  font-size: calc(20px + 2vmin);
+  font-weight: 600;
+  background-color: Transparent !important;
+
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+}
+.container button {
+  background-color: rgba(35, 9, 127, 0.748);
+  border: none;
+  font-weight: 800;
+  animation: fadeIn 1s;
+  height: 5vh;
+  border-radius: 10px;
+}
+
+.container > .unity {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.unity-con {
+  width: 100%;
+  height: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+@media (max-width: 415px) {
+  .container {
+    padding: 0 !important;
+  }
+  .unity-con {
+    max-width: 400px !important;
+    height: 300px !important;
+    justify-self: center;
+    align-self: center;
+  }
+  .container > .unity {
+    max-width: 400px !important;
+    height: auto;
+  }
+}
+@media (orientation: landscape) {
+  .unity-con {
+    height: 100vh !important;
+    width: 100% !important;
+    justify-self: center;
+    align-self: center;
+  }
+  .container > .unity {
+    height: 100vh !important;
+    width: 100% !important;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
